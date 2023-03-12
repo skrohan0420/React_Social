@@ -1,56 +1,69 @@
 @import "../../style.scss";
 
-.leftBar{
-    @include themify($theme){
+.leftBar {
+    @include themify($theme) {
         flex: 2;
         position: sticky;
         top: 70px;
         height: calc(100vh - 70px);
         overflow: scroll;
-        background-color: themed('bg');
-        color: themed('textColor');
-        &::-webkit-scrollbar{
+        background-color: themed("bg");
+        color: themed("textColor");
+
+        @include mobile {
             display: none;
         }
-        .container{
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .container {
             padding: 20px;
-            hr{
+
+            hr {
                 margin: 20px 0px;
                 border: none;
                 height: 0.5px;
-                background-color: themed('border') ;
+                background-color: themed("border");
             }
-            .menu{
+
+            .menu {
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
-                span{
-                    font-size: 20px;
+
+                span {
+                    font-size: 12px;
                 }
-                .user{
+
+                .user {
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                    img{
+
+                    img {
                         width: 30px;
                         height: 30px;
                         border-radius: 50%;
                         object-fit: cover;
                     }
 
-                    span{
+                    span {
                         font-size: 14px;
                     }
                 }
-                .item{
+
+                .item {
                     display: flex;
                     align-items: center;
                     gap: 10px;
-                    img{
+
+                    img {
                         width: 30px;
                     }
 
-                    span{
+                    span {
                         font-size: 14px;
                     }
                 }
